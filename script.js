@@ -11,8 +11,9 @@ function decimalToBinary(num) {
         binaryNum[i] = n % 2;
         n = Math.floor(n / 2);
         i++;
-    } 
-	return ...binaryNum;
+		
+    }  
+	return binaryNum.reverse();
 	
 	
   
