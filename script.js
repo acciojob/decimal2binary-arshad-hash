@@ -1,19 +1,33 @@
 function decimalToBinary(num) {
-  //Write you code here
-	 // array to store binary number
-    let binaryNum = new Array(32);
- 
-    // counter for binary array
+  let binaryNum = new Array(32);
+
+    // Counter for binary array
     let i = 0;
-    while (n > 0) {
- 
-        // storing remainder in binary array
-        binaryNum[i] = n % 2;
-        n = Math.floor(n / 2);
+
+    // Check if the input is not a negative number
+    if (num < 0) {
+        throw new Error("Input must be a non-negative integer");
+    }
+
+    // Handle the special case when num is 0
+    if (num === 0) {
+        return "0";
+    }
+
+    // Convert decimal to binary
+    while (num > 0) {
+        // Storing remainder in the binary array
+        binaryNum[i] = num % 2;
+        num = Math.floor(num / 2);
         i++;
+    }
+
+    // Convert the binary array to a string
+    const binaryString = binaryNum.slice(0, i).reverse().join("");
+
+    return binaryString;
 		
-    }  
-	return binaryNum.reverse();
+   
 	
 	
   
